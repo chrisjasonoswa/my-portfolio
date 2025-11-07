@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme inline{
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+}
+
+@layer base{
+  :root{
+    --primary: theme(colors.emerald.500);
+    --secondary: theme(colors.neutral.800);
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    @apply
+      text-sm
+      text-neutral-800 
+      bg-linear-to-br 
+      from-stone-100 to-emerald-600/50
+      dark:from-emerald-950 dark:to-black
+  }
+  .main-div{
+    @apply
+    flex flex-col items-center
+  }
+
+  /* Page */
+  .page-title {
+    @apply inline-flex rounded-xl px-3 py-1.5 text-2xl font-medium mb-4 
+      text-secondary dark:text-white
+  }
+  /* Buttons */
+  button{
+    @apply cursor-pointer
+  }
+
+  .full-button{
+    @apply flex items-center gap-2 py-1.5 px-4 rounded-lg text-white
+  }
+
+  .toggle-slider {
+    position: relative;
+    width: 60px;  
+    @apply h-full
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    @apply h-full aspect-square
+  }
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  input[type='checkbox']:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input[type='checkbox']:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  /* Nav */
+  .nav-items-list{
+    @apply hidden sm:inline-flex gap-1 p-1 rounded-full bg-white/70 dark:bg-white/10
+  }
+
+  .nav-button-active{
+    @apply
+      text-white dark:text-secondary
+      bg-secondary dark:bg-white
+      
+  }
+  .nav-button-inactive{
+    @apply
+      text-secondary dark:text-white
+  }
+  .nav-button-inactive:hover{
+    @apply
+      bg-secondary/10 dark:bg-white/10
+  }
+
+  .theme-toggle {
+    @apply
+      flex items-center justify-center
+      h-full
+      aspect-square
+      rounded-full
+      text-white dark:text-secondary
+      bg-secondary dark:bg-white;
+  }
+  .card {
+    @apply 
+      rounded-4xl
+      p-6 pt-8
+      bg-white/55 dark:bg-white/10  
+      text-secondary dark:text-white
+  }
+
+  .card:hover{
+    @apply transform transition-all scale-101 z-10 shadow-2xl backdrop-blur-[5px] dark:backdrop-blur-[20px] duration-500 ease-in-out
+  }
+
+  .card-history {
+    @apply 
+      rounded-3xl
+      p-6 pt-8
+      bg-secondary 
+      text-white
+  }
+
+  .card-title1{
+    @apply text-xl font-medium mb-2
+  }
+}
