@@ -12,7 +12,7 @@ const page = () => {
         </div>
       </div>  
       <div className="card rounded-2xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-secondary text-secondary dark:text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-secondary dark:text-white">
           {HISTORY.flatMap((job) => job.projects || []).map((project) => (
             <div
               key={project.title}

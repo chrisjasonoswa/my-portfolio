@@ -1,0 +1,10 @@
+  @layer components {
+    /* Buttons */
+    button{
+      @apply cursor-pointer   
+    }
+
+    .full-button{
+      @apply flex items-center gap-2 py-1.5 px-4 rounded-lg text-white
+    }
+  }

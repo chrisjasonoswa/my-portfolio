@@ -42,7 +42,7 @@ export default function RootLayout({
           <div className="main-div">
             <div className="
               flex w-full flex-col min-h-screen
-              px-8 py-4
+              px-12 py-6
               lg:px-16 lg:py-8
               max-w-[1920px]
             ">
@@ -53,7 +53,7 @@ export default function RootLayout({
               </main>
               <footer className="mt-8">
                 <hr className="border-t border-secondary/10 dark:border-white/10 mb-4" />
-                <div className="text-center text-secondary dark:text-white text-xs">© 2025 Chris Jason A. Oswa. All rights reserved.</div>
+                <div className="text-center text-secondary dark:text-white text-xs">© {new Date().getFullYear()} Chris Jason A. Oswa. All rights reserved.</div>
               </footer>
             </div>
           </div>

@@ -75,7 +75,7 @@ export const HISTORY: History[] = [
     ]
   },
   {
-    jobTitle: "Full Stack Developer",
+    jobTitle: "Full Stack Developer (Part-time)",
     company: "WareSwift",
     date: "April 2025 - May 2025",
     projects: [

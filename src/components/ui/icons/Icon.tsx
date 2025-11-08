@@ -20,9 +20,11 @@ import ProfileIcon from "./ProfileIcon";
 import SkillsIcon from "./SkillsIcon";
 import SunIcon from "./SunIcon";
 import VerifiedBadgeIcon from "./VerifiedBadgeIcon";
+import ArrowLeftIcon from "./ArrowLeftIcon";
 
 export const ICONS = {
   arrowRight: ArrowRightIcon,
+  arrowLeft: ArrowLeftIcon,
   arrowLink: ArrowLinkIcon,
   book: BookIcon,
   briefcase: BriefcaseIcon,

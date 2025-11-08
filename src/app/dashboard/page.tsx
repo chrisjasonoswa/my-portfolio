@@ -19,11 +19,11 @@ import Link from "next/link";
 const page = () => {
   return (
     <div className="flex flex-col">
-      <div className="grid grid-cols-12 gap-1">
+      <div className="grid grid-cols-12 gap-1.5">
         {/* Profile, About, Tech Stack, Projects */}
-        <div className="col-span-12 lg:col-span-8 space-y-1">
+        <div className="col-span-12 lg:col-span-8 space-y-1.5">
           {/* Profile and About */}
-          <div className="mb-1 grid grid-cols-12 gap-1">
+          <div className="grid grid-cols-12 gap-1.5">
             {/* Profile */}
             <div className="card relative  min-h-85 w-full rounded-3xl bg-emerald-900/90 dark:bg-emerald-600/70 col-span-12 sm:col-span-4">
               {/* Image with overflow-hidden */}
@@ -78,6 +78,7 @@ const page = () => {
                         'noopener,noreferrer'
                       );
                     }}
+                  className="hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105"
                 >
                   <CalendarIcon size={"0.9em"} />
                   Schedule a meeting
@@ -154,7 +155,7 @@ const page = () => {
             </div>
           </div>
 
-          {/* Projects */}
+          {/* Recent Projects */}
           <div className="card">
             <div className="card-title1 flex items-center gap-2">
               <Icon name="folder" size={"0.9em"} />
@@ -231,7 +232,7 @@ const page = () => {
                       </Link>
                     }
                   </div>
-                  <div className="text-xs opacity-55 text-center"> { value ?? url}</div>
+                  <div className="text-xs opacity-55 text-center wrap-break-word"> { value ?? url}</div>
                 </div>
               )}
     

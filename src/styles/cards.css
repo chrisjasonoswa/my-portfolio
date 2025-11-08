@@ -1,0 +1,25 @@
+@layer components {
+  .card {
+    @apply 
+      rounded-4xl
+      p-6 pt-8
+      bg-white/70 dark:bg-white/10  
+      text-secondary dark:text-white
+  }
+
+  .card:hover{
+    @apply transform transition-all scale-101 z-10 shadow-2xl backdrop-blur-[5px] dark:backdrop-blur-[20px] duration-500 ease-in-out
+  }
+
+  .card-history {
+    @apply 
+      rounded-3xl
+      p-6 pt-8
+      bg-secondary 
+      text-white
+  }
+
+  .card-title1{
+    @apply text-xl font-medium mb-2
+  }
+}

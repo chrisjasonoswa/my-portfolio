@@ -2,6 +2,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
+@layer theme {
+  :root{
+    --primary: theme(colors.emerald.500);
+    --secondary: theme(colors.neutral.800);
+  }
+}
+
 @theme inline{
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -36,61 +43,10 @@
     @apply inline-flex rounded-xl px-3 py-1.5 text-2xl font-medium mb-4 
       text-secondary dark:text-white
   }
-  /* Buttons */
-  button{
-    @apply cursor-pointer
-  }
-
-  .full-button{
-    @apply flex items-center gap-2 py-1.5 px-4 rounded-lg text-white
-  }
-
-  .toggle-slider {
-    position: relative;
-    width: 60px;  
-    @apply h-full
-  }
-
-  .slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 34px;
-    cursor: pointer;
-    transition: 0.4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: '';
-
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
-    @apply h-full aspect-square
-  }
-
-  input[type='checkbox'] {
-    display: none;
-  }
-
-  input[type='checkbox']:checked + .slider {
-    background-color: #2196f3;
-  }
-
-  input[type='checkbox']:checked + .slider:before {
-    transform: translateX(26px);
-  }
 
   /* Nav */
   .nav-items-list{
-    @apply hidden sm:inline-flex gap-1 p-1 rounded-full bg-white/70 dark:bg-white/10
+    @apply inline-flex gap-1 p-1 rounded-full bg-white/70 dark:bg-white/10
   }
 
   .nav-button-active{
@@ -117,27 +73,7 @@
       text-white dark:text-secondary
       bg-secondary dark:bg-white;
   }
-  .card {
-    @apply 
-      rounded-4xl
-      p-6 pt-8
-      bg-white/55 dark:bg-white/10  
-      text-secondary dark:text-white
-  }
-
-  .card:hover{
-    @apply transform transition-all scale-101 z-10 shadow-2xl backdrop-blur-[5px] dark:backdrop-blur-[20px] duration-500 ease-in-out
-  }
-
-  .card-history {
-    @apply 
-      rounded-3xl
-      p-6 pt-8
-      bg-secondary 
-      text-white
-  }
-
-  .card-title1{
-    @apply text-xl font-medium mb-2
-  }
 }
+
+@import "./buttons.css";
+@import "./cards.css";

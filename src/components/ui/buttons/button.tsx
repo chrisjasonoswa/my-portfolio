@@ -88,7 +88,9 @@ export default function Button({
 
   // ✅ Base styles
   const baseStyles =
-    "inline-flex items-center gap-1 justify-center font-medium rounded-xl transition-colors duration-200 select-none focus:outline-none";
+    ` inline-flex items-center gap-1 justify-center font-medium rounded-xl transition-colors select-none focus:outline-none
+      hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-103
+    `;
 
   // 🧩 Safe lookup from color map
   const colorClasses = colorMap[color]?.[variant] ?? colorMap.primary.solid;
