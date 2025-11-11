@@ -1,10 +1,41 @@
-  @layer components {
-    /* Buttons */
-    button{
-      @apply cursor-pointer   
-    }
-
-    .full-button{
-      @apply flex items-center gap-2 py-1.5 px-4 rounded-lg text-white
-    }
+@layer components {
+  /* Buttons */
+  button{
+    @apply cursor-pointer   
   }
+
+  .full-button{
+    @apply flex items-center gap-2 py-1.5 px-4 rounded-lg text-white
+  }
+
+  .theme-toggle {
+    @apply
+      inline-flex items-center justify-center
+      h-full
+      aspect-square
+      rounded-full
+      text-secondary dark:text-white
+      border border-secondary dark:border-white 
+      bg-secondary/5 dark:bg-white/20
+  }
+
+  .menu-toggle{
+    @apply
+      inline-flex items-center justify-center
+      h-full
+      aspect-square
+      rounded-full
+      text-white dark:text-secondary
+      bg-secondary dark:bg-white;
+  }
+
+
+  .menu-dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  .menu-dropdown-nav-items{
+    @apply block top-14 absolute min-w-40 rounded-xl z-1 gap-1 p-1
+      bg-white/90 dark:bg-white/20 backdrop-blur-3xl
+  }
+}

@@ -15,12 +15,12 @@ const colorMap = {
   primary: {
     solid: `
       border-none
-      bg-primary
+      bg-primary/90
       text-white
     `,
     outline: `
-      border border-primary dark:border-primary 
-      text-primary dark:text-primary
+      border border-primary/90 dark:border-primary/90
+      text-primary/90 dark:text-primary/90
     `,
   },
   secondary: {

@@ -19,231 +19,108 @@ import Link from "next/link";
 const page = () => {
   return (
     <div className="flex flex-col">
-      <div className="grid grid-cols-12 gap-1.5">
-        {/* Profile, About, Tech Stack, Projects */}
-        <div className="col-span-12 lg:col-span-8 space-y-1.5">
-          {/* Profile and About */}
-          <div className="grid grid-cols-12 gap-1.5">
-            {/* Profile */}
-            <div className="card relative  min-h-85 w-full rounded-3xl bg-emerald-900/90 dark:bg-emerald-600/70 col-span-12 sm:col-span-4">
-              {/* Image with overflow-hidden */}
-              <div className="absolute inset-0 overflow-hidden rounded-3xl">
-                <Image
-                  src="/profile3.png"
-                  alt="Profile"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Overlay content — not clipped */}
-              <div className="absolute bottom-0 left-0 w-full overflow-visible rounded-b-3xl bg-linear-to-t from-black/90 via-black/60 to-transparent p-5 text-white">
-                <div className="relative flex items-center gap-2 text-lg font-semibold">
-                  <span>Chris Jason A. Oswa</span>
-                  <VerifiedBadgeIcon />
-                </div>
-                <p className="mb-3 text-sm text-gray-200">Software Engineer</p>
-                <div className="flex items-center gap-1.5 text-gray-300">
-                  <LocationPinIcon size={16} color="#3b82f6" />
-                  <span className="text-sm">Cebu, Philippines</span>
-                </div>
-              </div>
-            </div>
-            {/* About */}
-            <div className="card col-span-12 flex flex-col sm:col-span-8 lg:col-span-8">
-              <div className="card-title1 flex items-center gap-2">
-                <ProfileIcon size={"0.9em"} />
-                <div>About</div>
-              </div>
-              <div className="mb-2">
-                I’m Chris Jason Oswa, a Software Engineer passionate about
-                building simple, functional, and user-focused web applications.
-                I work across the full stack with Vue, React, Laravel, Django,
-                ASP.NET Core, and Spring Boot. I enjoy creating intuitive
-                solutions, optimizing systems, and continuously learning to grow
-                as a developer.
-                <br />
-                <br />
-                Let&apos;s connect! I&apos;m always open to meaningful tech
-                conversations and collaboration opportunities.
-              </div>
-              <div className="mt-auto flex flex-wrap gap-2">
-                <Button
-                  size="md"
-                  variant="solid"
-                  onClick={() => {
-                      window.open(
-                        'https://calendly.com/chrisjasonoswa555/30min',
-                        '_blank',
-                        'noopener,noreferrer'
-                      );
-                    }}
-                  className="hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105"
-                >
-                  <CalendarIcon size={"0.9em"} />
-                  Schedule a meeting
-                </Button>
-              
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    size="xs"
-                    variant="outline"
-                    color="secondary"
-                    className="border-secondary/15 dark:border-white/15"
-                    onClick={() => {
-                      window.open(
-                        'https://drive.google.com/uc?export=download&id=1dMMGU73pzT2ONHOZuSAVY0AlJ6b7URJt',
-                        '_blank',
-                        'noopener,noreferrer'
-                      );
-                    }}
-                  >
-                    <DownloadIcon size={"0.9em"} />
-                    Download Resume
-                  </Button>
-                  <Button
-                    size="xs"
-                    variant="outline"
-                    color="secondary"
-                    className="border-secondary/15 dark:border-white/15"
-                    onClick={() => {
-                      window.open(
-                        'https://mail.google.com/mail/?view=cm&to=chrisjasonoswa555@gmail.com',
-                        '_blank',
-                        'noopener,noreferrer'
-                      );
-                    }}
-                  >
-                    <MailIcon size={"0.9em"} />
-                    Send Email
-                  </Button>
-                </div>
-              </div>
-            </div>
+      <div className="grid grid-cols-9 gap-1.5">
+        {/* Profile */}
+        <div className="order-1 card col-span-9 md:col-span-4 lg:col-span-2 relative min-h-85 w-full rounded-3xl bg-emerald-900/90 dark:bg-emerald-600/70">
+          {/* Image with overflow-hidden */}
+          <div className="absolute inset-0 overflow-hidden rounded-3xl">
+            <Image
+              src="/profile3.png"
+              alt="Profile"
+              fill
+              className="object-cover"
+              fetchPriority="high"
+            />
           </div>
 
-          {/* Tech Stack */}
-          <div className="card">
-            <div className="card-title1 flex items-center gap-2">
-              <SkillsIcon size={"0.9em"} />
-              <div>Tech Stack</div>
-              <Link href="/tech-stack" className="flex gap-1 items-center ml-auto text-sm font-normal hover:opacity-50">
-                View All<ArrowRightIcon size={'0.9em'}/>
-              </Link>
+          {/* Overlay content — not clipped */}
+          <div className="absolute bottom-0 left-0 w-full overflow-visible rounded-b-3xl bg-linear-to-t from-black/90 via-black/60 to-transparent p-5 text-white">
+            <div className="relative flex items-center gap-2 text-lg font-semibold">
+              <span>Chris Jason A. Oswa</span>
+              <VerifiedBadgeIcon />
             </div>
-            <div className="flex flex-col gap-3">
-              {TECH_STACK.slice(0, 3).map(({title, values}) => {
-                return (
-                  <div
-                    key={title}
-                    className="text-base font-medium"
-                  >
-                    <div>{title}</div>
-                    <div className="flex flex-wrap gap-2">
-                        {values.map((item) => {
-                        return (
-                          <div key={item} className="text-xs font-normal inline-flex rounded-lg py-1 px-3 border border-secondary/20 dark:border-white/50">
-                            { item } 
-                          </div>
-                        )
-                      })}
-                    </div>
-
-                  </div>
-                )
-              })}
+            <p className="mb-3 text-sm text-gray-200">Software Engineer</p>
+            <div className="flex items-center gap-1.5 text-gray-300">
+              <LocationPinIcon size={16} color="#3b82f6" />
+              <span className="text-sm">Cebu, Philippines</span>
             </div>
           </div>
-
-          {/* Recent Projects */}
-          <div className="card">
-            <div className="card-title1 flex items-center gap-2">
-              <Icon name="folder" size={"0.9em"} />
-              <div>Recent Projects</div>
-              <Link
-                href="/projects"
-                className="flex gap-1 items-center ml-auto text-sm font-normal hover:opacity-50"
-              >
-                View All
-                <ArrowRightIcon size={"0.9em"} />
-              </Link>
-            </div>
-
-            {/* Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              {HISTORY.flatMap((job) => job.projects || []).slice(0, 4).map((project) => (
-                <div
-                  key={project.title}
-                  className="
-                    flex flex-col border border-neutral-300 dark:border-neutral-700 rounded-xl p-4
-                    hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105
-                  "
-                >
-                  <div className="flex items-center justify-between mb-1">
-                    <div className="font-medium text-foreground text-base">{project.title}</div>
-                    {project.url && (
-                      <Link
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm bg-primary/70 text-white p-1 rounded-full hover:underline flex items-center gap-1"
-                      >
-                        <Icon name="link" size="0.9em" />
-                      </Link>
-                    )}
-                  </div>
-
-                  <p className="text-sm text-muted-foreground">
-                    {project.shortDescription}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div className="card">
-            <div className="card-title1 flex items-center gap-2">
-              <MailIcon size={"0.9em"} />
-              <div>Contact</div>
-            </div>
-
-            {/* Responsive grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {CONTACTS.map(({title, url, value, icon}) =>
-                <div 
-                  key={title}
-                  className="flex flex-col
-                    border border-neutral-300 dark:border-neutral-700 rounded-xl p-2
-                    hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105
-                  "
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon name={icon as keyof typeof ICONS} size="1.2em" />
-                    <div className="font-medium text-sm">{ title }</div>
-                    {url &&
-                      <Link
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm bg-primary/70 text-white p-1 rounded-full hover:underline flex items-center gap-1"
-                      >
-                        <Icon name="arrowLink" size="0.9em" />
-                      </Link>
-                    }
-                  </div>
-                  <div className="text-xs opacity-55 text-center wrap-break-word"> { value ?? url}</div>
-                </div>
-              )}
-    
-
-            </div>
-          </div>
-
-
         </div>
+
+        {/* About */}
+        <div className="order-2 card col-span-9 md:col-span-5 lg:col-span-4 flex flex-col  ">
+          <div className="card-title1 flex items-center gap-2">
+            <ProfileIcon size={"0.9em"} />
+            <div>About</div>
+          </div>
+          <div className="mb-2">
+            I’m Chris Jason Oswa, a Software Engineer passionate about
+            building simple, functional, and user-focused web applications.
+            I work across the full stack with Vue, React, Laravel, Django,
+            ASP.NET Core, and Spring Boot. I enjoy creating intuitive
+            solutions, optimizing systems, and continuously learning to grow
+            as a developer.
+            <br />
+            <br />
+            Let&apos;s connect! I&apos;m always open to meaningful tech
+            conversations and collaboration opportunities.
+          </div>
+          <div className="mt-auto flex flex-wrap gap-2">
+            <Button
+              size="md"
+              variant="solid"
+              onClick={() => {
+                  window.open(
+                    'https://calendly.com/chrisjasonoswa555/30min',
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }}
+              className="hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105"
+            >
+              <CalendarIcon size={"0.9em"} />
+              Schedule a meeting
+            </Button>
+          
+            <div className="flex flex-wrap gap-2">
+              <Button
+                size="xs"
+                variant="outline"
+                color="secondary"
+                className="border-secondary/15 dark:border-white/15"
+                onClick={() => {
+                  window.open(
+                    'https://drive.google.com/uc?export=download&id=1dMMGU73pzT2ONHOZuSAVY0AlJ6b7URJt',
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }}
+              >
+                <DownloadIcon size={"0.9em"} />
+                Download Resume
+              </Button>
+              <Button
+                size="xs"
+                variant="outline"
+                color="secondary"
+                className="border-secondary/15 dark:border-white/15"
+                onClick={() => {
+                  window.open(
+                    'https://mail.google.com/mail/?view=cm&to=chrisjasonoswa555@gmail.com',
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }}
+              >
+                <MailIcon size={"0.9em"} />
+                Send Email
+              </Button>
+            </div>
+          </div>
+        </div>
+
         {/* Experience */}
-        <div className="col-span-12 lg:col-span-4">
+        <div className="order-5 lg:order-3 col-span-9 lg:col-span-3 lg:row-span-3">
           <div className="card">
             <div className="card-title1 flex items-center gap-2">
               <BookIcon size={"0.8em"} />
@@ -273,7 +150,7 @@ const page = () => {
               ))}
             </div>
 
-            {/* Experience */}
+            {/* History */}
             <div className="flex flex-col">
               <div className="relative flex flex-col items-center">
                 {/* Layer 3 (bottom/widest) */}
@@ -325,6 +202,126 @@ const page = () => {
             </div>
 
             
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="order-3 lg:order-4 card col-span-9 lg:col-span-6">
+          <div className="card-title1 flex items-center gap-2">
+            <SkillsIcon size={"0.9em"} />
+            <div>Tech Stack</div>
+            <Link href="/tech-stack" className="flex gap-1 items-center ml-auto text-sm font-normal hover:opacity-50">
+              View All<ArrowRightIcon size={'0.9em'}/>
+            </Link>
+          </div>
+          <div className="flex flex-col gap-3">
+            {TECH_STACK.slice(0, 3).map(({title, values}) => {
+              return (
+                <div
+                  key={title}
+                  className="text-base font-medium"
+                >
+                  <div>{title}</div>
+                  <div className="flex flex-wrap gap-2">
+                      {values.map((item) => {
+                      return (
+                        <div key={item} className="text-xs font-normal inline-flex rounded-lg py-1 px-3 border border-secondary/20 dark:border-white/50">
+                          { item } 
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Recent Projects */}
+        <div className="order-4 lg:order-5 card col-span-9 lg:col-span-6">
+          <div className="card-title1 flex items-center gap-2">
+            <Icon name="folder" size={"0.9em"} />
+            <div>Recent Projects</div>
+            <Link
+              href="/projects"
+              className="flex gap-1 items-center ml-auto text-sm font-normal hover:opacity-50"
+            >
+              View All
+              <ArrowRightIcon size={"0.9em"} />
+            </Link>
+          </div>
+
+          {/* Projects */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {HISTORY.flatMap((job) => job.projects || []).slice(0, 4).map((project) => (
+              <div
+                key={project.title}
+                className="
+                  flex flex-col border border-neutral-300 dark:border-neutral-700 rounded-xl p-4
+                  hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105
+                "
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <div className="font-medium text-foreground text-base">{project.title}</div>
+                  {project.url && (
+                    <Link
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm bg-primary/70 text-white p-1 rounded-full hover:underline flex items-center gap-1"
+                      aria-label={`Go to project link ${project.url}`}
+                    >
+                      <Icon name="link" size="0.9em" />
+                    </Link>
+                  )}
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  {project.shortDescription}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div className="order-last card col-span-9 lg:col-span-6">
+          <div className="card-title1 flex items-center gap-2">
+            <MailIcon size={"0.9em"} />
+            <div>Contact</div>
+          </div>
+
+          {/* Responsive grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {CONTACTS.map(({title, url, value, icon}) =>
+              <div 
+                key={title}
+                className="flex flex-col
+                  border border-neutral-300 dark:border-neutral-700 rounded-xl p-2
+                  hover:shadow-2xl hover:duration-500 hover:transform hover:transition-all hover:scale-105
+                "
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Icon name={icon as keyof typeof ICONS} size="1.2em" />
+                  <div className="font-medium text-sm">{ title }</div>
+                  {url &&
+                    <Link
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm bg-primary/70 text-white p-1 rounded-full hover:underline flex items-center gap-1"
+                      aria-label={`Go to ${url}`}
+                    >
+                      <Icon name="arrowLink" size="0.9em" />
+                    </Link>
+                  }
+                </div>
+                <div className="text-xs opacity-55 text-center wrap-break-word"> { value ?? url}</div>
+              </div>
+            )}
+  
+
           </div>
         </div>
       </div>

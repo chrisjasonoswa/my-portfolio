@@ -29,6 +29,7 @@ const page = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm bg-primary/70 text-white p-1 rounded-full hover:underline flex items-center gap-1"
+                    aria-label={`Go to project link ${project.url}`}
                   >
                     <Icon name="link" size="0.9em" />
                   </Link>

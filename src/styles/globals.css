@@ -64,15 +64,7 @@
       bg-secondary/10 dark:bg-white/10
   }
 
-  .theme-toggle {
-    @apply
-      flex items-center justify-center
-      h-full
-      aspect-square
-      rounded-full
-      text-white dark:text-secondary
-      bg-secondary dark:bg-white;
-  }
+
 }
 
 @import "./buttons.css";

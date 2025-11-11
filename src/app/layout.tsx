@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chris Oswa – Portfolio",
-  description: "Personal portfolio and resume website",
+  title: "Chris Jason Oswa – Portfolio",
+  description: "Portfolio website",
 };
 
 export default function RootLayout({

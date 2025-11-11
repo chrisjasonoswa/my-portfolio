@@ -21,11 +21,13 @@ import SkillsIcon from "./SkillsIcon";
 import SunIcon from "./SunIcon";
 import VerifiedBadgeIcon from "./VerifiedBadgeIcon";
 import ArrowLeftIcon from "./ArrowLeftIcon";
+import ArrowSwitchIcon from "./ArrowSwitchIcon";
 
 export const ICONS = {
   arrowRight: ArrowRightIcon,
   arrowLeft: ArrowLeftIcon,
   arrowLink: ArrowLinkIcon,
+  arrowSwitch: ArrowSwitchIcon,
   book: BookIcon,
   briefcase: BriefcaseIcon,
   building: BuildingIcon,
