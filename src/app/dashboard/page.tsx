@@ -239,7 +239,7 @@ const page = () => {
         </div>
 
         {/* Recent Projects */}
-        <div className="order-4 lg:order-5 card col-span-9 lg:col-span-6">
+        <div className="order-4 lg:order-5 card col-span-9 lg:col-span-6 xl:col-span-4">
           <div className="card-title1 flex items-center gap-2">
             <Icon name="folder" size={"0.9em"} />
             <div>Recent Projects</div>
@@ -285,13 +285,28 @@ const page = () => {
           </div>
         </div>
 
+        {/* Life Off-Screen */}
+        <div className="order-6 lg:order-6 card col-span-9 lg:col-span-6 xl:col-span-2">
+          <div className="card-title1 flex items-center gap-2">
+            <Icon name="profile" size={"0.9em"} />
+            <div>Life Off-Screen</div>
+          </div>
+          <div>
+            <p>
+              When I&apos;m off-screen, I&apos;m usually watching movies, spending time with friends, or just taking a break from work. I like simple things that help me relax and reset.
+            </p>
+            <p>
+              <br/>
+              I also keep up with the crypto/blockchain space. I check new trends, look at coins (including memecoins), browse NFTs, try NFT games, and invest when something seems interesting. I’ve also done blogging, played NFT games competitively, and created my own NFT art. It’s mostly about staying updated, trying things out, and seeing what’s worth getting into.
+            </p>
+          </div>
+        </div>
         {/* Contact */}
-        <div className="order-last card col-span-9 lg:col-span-6">
+        <div className="order-last card flex flex-col col-span-9 lg:col-span-6">
           <div className="card-title1 flex items-center gap-2">
             <MailIcon size={"0.9em"} />
             <div>Contact</div>
           </div>
-
           {/* Responsive grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {CONTACTS.map(({title, url, value, icon}) =>
